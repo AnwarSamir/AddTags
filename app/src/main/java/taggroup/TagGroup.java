@@ -33,24 +33,7 @@ import com.asi.addtags.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A <code>TagGroup</code> is a special layout with a set of tags.
- * This group has two modes:
- * <p>
- * 1. APPEND mode
- * 2. DISPLAY mode
- * </p>
- * Default is DISPLAY mode. When in APPEND mode, the group is capable of input for append new tags
- * and delete tags.
- * <p>
- * When in DISPLAY mode, the group is only contain NORMAL state tags, and the tags in group
- * is not focusable.
- * </p>
- *
- * @author Jun Gu (http://2dxgujun.com)
- * @version 2.0
- * @since 2015-2-3 14:16:32
- */
+
 public class TagGroup extends ViewGroup {
     private final int default_border_color = Color.rgb(0x49, 0xC1, 0x20);
     private final int default_text_color = Color.rgb(0x49, 0xC1, 0x20);
