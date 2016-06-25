@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -23,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
     String json=null;
     StringBuilder stringBuilder = null;
     private TagGroup mTagGroupp;
-
+    private TagGroup.OnTagClickListener mTagClickListener = new TagGroup.OnTagClickListener() {
+        @Override
+        public void onTagClick(String tag) {
+            Toast.makeText(MainActivity.this, tag, Toast.LENGTH_SHORT).show();
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         mTagGroupp = (TagGroup) findViewById(R.id.tag_groupp);
         data= (TextView) findViewById(R.id.textView);
 
-
+        mTagGroupp.setOnTagClickListener(mTagClickListener);
     }
 
     public void getData(View view) {
@@ -46,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         data.setText(json.toString());
-        
+
 
     }
 
